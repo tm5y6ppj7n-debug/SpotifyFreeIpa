@@ -1,13 +1,13 @@
 name: Notify Discord
 
 on:
-  push:  # change l'événement si besoin
+  push:
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-    - name: Envoyer notification Discord
+    - name: Envoi notification Discord
       uses: fjogeleit/http-request-action@v1
       with:
         url: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -15,5 +15,11 @@ jobs:
         contentType: 'application/json'
         data: |
           {
-            "content": "Un nouveau push a été effectué sur le dépôt GitHub !"
+            "content": "**[${{ github.repository }}]**\nNouvelle modification !",
+            "embeds": [{
+              "title": "Push réalisé sur ${{ github.ref }}",
+              "description": "Auteur : ${{ github.actor }}\nDernier commit : `${{ github.event.head_commit.message }}`",
+              "url": "https://github.com/${{ github.repository }}/commit/${{ github.sha }}",
+              "color": 5814783
+            }]
           }
