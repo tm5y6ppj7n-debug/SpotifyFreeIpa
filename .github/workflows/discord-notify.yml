@@ -13,4 +13,4 @@ jobs:
         url: ${{ secrets.DISCORD_WEBHOOK_URL }}
         method: POST
         contentType: 'application/json'
-        data: '{"content":"**[${{ github.repository }}]**\\nNouvelle modification !","embeds":[{"title":"Push réalisé sur ${{ github.ref }}","description":"Auteur : ${{ github.actor }}\\nDernier commit : `${{ github.event.head_commit.message }}`","url":"https://github.com/${{ github.repository }}/commit/${{ github.sha }}","color":5814783}]}'
+        data: '{"content":"**[${{ github.repository }}]**\\Nouvelle modification !","embeds":[{"title":"Push réalisé sur ${{ github.ref }}","description":"Auteur : ${{ github.actor }}\\nDernier commit : `${{ github.event.head_commit.message }}`","url":"https://github.com/${{ github.repository }}/commit/${{ github.sha }}","color":5814783}]}'
