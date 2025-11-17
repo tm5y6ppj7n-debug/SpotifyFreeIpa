@@ -10,7 +10,7 @@ jobs:
     - name: Envoyer notification Discord
       uses: fjogeleit/http-request-action@v1
       with:
-        url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        url: ${{ secrets.https://discord.com/api/webhooks/1438192358968660150/VeiFJPFkGFqpiQ8CoKOlkTJHZnG9H5CRv3HlJ9BP2L62kLkF8PNcTc357xdGC1fZUtjf }}
         method: POST
         contentType: 'application/json'
         data: |
